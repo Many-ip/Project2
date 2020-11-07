@@ -3,8 +3,8 @@
 
 
 usage(){
-	echo "Usage: ${0} USER_NAME [COMMENT]..." >&2
-	echo "Crea una cuenta en el sistema local con el nombre de USER_NAME y un campo de comentarios de COMMENT." >&2
+	echo "Usage: ${0} USER_NAME [COMMENT]..." 
+	echo "Crea una cuenta en el sistema local con el nombre de USER_NAME y un campo de comentarios de COMMENT."
 	exit 1
 }
 
@@ -26,8 +26,8 @@ else
 		useradd -c "$COMMENT" -m "$USER" &> /dev/null
 		
 		if [ $? -ne 0 ]
-		then		
-			echo "No se ha podido crear el usuario" &>2
+		then	
+			echo "No se ha podido crear el usuario"
 			exit 1
 		fi
 		echo $PASSWORD | passwd --stdin $USER &> /dev/null
